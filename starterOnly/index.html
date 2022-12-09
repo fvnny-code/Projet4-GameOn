@@ -12,14 +12,17 @@
     />
   </head>
   <body>
+    <!--header -->
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
-      
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
+      <!-- Deletion of the following link, in order to abide by the mockup -->
+      <!-- <a href="#" class="active"><span>Accueil</span></a> -->
+
+      <!-- Addition of the class="active" in order to abide by the mockup -->
+      <a href="#" class="active"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Contact</span></a>
       <a href="#"><span>Évènements passés</span></a>
@@ -28,7 +31,8 @@
       </a>
     </div>
     </div>
-  </div>
+  <!-- Removal of unnecessary </div> -->
+<!-- page content -->
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -47,12 +51,12 @@
         <div class="hero-img">
           <img src="./bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn">
+        <!-- Unnecessary duplicated  button <button class="btn-signup modal-btn">
           je m'inscris
-        </button>
+        </button> -->
       </div>
-
-      <div class="bground">
+      <!-- modal form -->
+      <div class="bground modal-form">
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
@@ -92,6 +96,7 @@
                   id="email"
                   name="email"
                 /><br>
+                
               </div>
               <div
                 class="formData">
@@ -207,8 +212,28 @@
               />
             </form>
           </div>
+          
         </div>
       </div>
+      <div class="bground modal-confirmation">
+        <div class="content">
+          <span class="close"></span>
+          <div class="modal-body">
+          <p>lorem12</p>
+          <form>
+            <input
+            class="btn-submit"
+            type="submit"
+            class="button"
+            value="C'est parti"
+          />
+          </form>
+
+          </div>
+          
+        </div>
+      </div>
+      
     </main>
     <footer>
       <p class="copyrights">
