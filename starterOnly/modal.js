@@ -9,33 +9,56 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector(".modal-form");
-const modalConfirm = document.querySelector(".modal-confirmation");
 const modalBtn = document.querySelectorAll(".modal-btn");
-// Verifier les valeurs regex  ou if
+const modalBtnClose = document.querySelector(".close");
 const formData = document.querySelectorAll(".formData");
 
-console.log(modalBtn);
+const form = document.getElementById("form");
+const modalConfirm = document.querySelector(".modal-confirmation");
+
+// const to get form inputs
+// const firstName = document.getElementById("first");
+// const lastname = document.getElementById("last");
+// const email = document.getElementById("email");
+// const birthdate = document.getElementById("birthdate");
+// const quantity = document.getElementById("quantity");
+// const tornamentLocation = document.getElementByName("location");
+// const condition = document.getElementById("checkbox1");
+// const btnSubmit = document.getElementById("btnSubmit");
+// const btnValid = document.getElementById("btnValid");
+
+
+// const to verify if input is valid or not
+
+// Verifier les valeurs regex  ou if
+
+
+
+// -------- Events for launching or closing modal form -------- //
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
 // launch modal form
 function launchModal() {
-  console.log("lol");
   modalbg.style.display = "block";
 }
 
 function validate() {
   //console.log("blourp");
   // conditions sur les inputs
-
   // Si problème
   // if (...) { elem.setAttribute("data-error-visible, true); return false; }
   //ces attributs sont dans le css .formData l-223 et 226
 
   modalbg.style.display = "none";
   modalConfirm.style.display = "block";
-
   return false; // blocks validation until return true; 
 }
+
+// Close modal form 
+modalBtnClose.addEventListener("click", function() {         
+  modalbg.style.display = "none";
+});
+//Close modal confirmation
+// NE MARCHE PAS !!!! //
 
