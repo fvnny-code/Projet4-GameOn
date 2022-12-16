@@ -4,11 +4,13 @@
   --font-slab: var(--font-default);
   --modal-duration: 0.8s;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 /* General settings */
 
 body {
@@ -30,18 +32,22 @@ p {
 img {
   padding-right: 1rem;
 }
+
 /* Landing Page */
 /* navbar */
 .topnav {
   overflow: hidden;
   margin: 3.5%;
 }
+
 .header-logo {
-    float: left;
+  float: left;
 }
+
 .main-navbar {
-    float: right;
+  float: right;
 }
+
 .topnav a {
   float: left;
   display: block;
@@ -73,21 +79,28 @@ img {
 /* Navbar - responsive */
 /* tablet */
 @media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+  }
+
   .topnav a.icon {
     float: right;
     display: block;
+    color: #ff0000;
   }
 }
-/*  Is class .responsive relevant ? */
-/*  There are 2 @media screen and (max-width: 768px){} : regroup ? */
+
 @media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .topnav.responsive a {
     float: none;
     display: block;
@@ -96,14 +109,22 @@ img {
 }
 
 /* smartphone */
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
+  }
+
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
   }
-} 
+
+  .header-logo img {
+    width: 150px;
+  }
+}
+
 /* page content */
 main {
   font-size: 130%;
@@ -117,8 +138,9 @@ main {
   text-align: justify;
 
 }
+
 .hero-section {
-  min-height: 93vh;
+
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -126,6 +148,7 @@ main {
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
+
 .hero-content {
   padding: 51px 67px;
   grid-column: span 4;
@@ -133,8 +156,9 @@ main {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
+  min-width: 400px;
 }
+
 .hero-content::after {
   content: "";
   width: 100%;
@@ -144,45 +168,50 @@ main {
   right: -80px;
   top: 0;
 }
-.hero-content > * {
+
+.hero-content>* {
   position: relative;
   z-index: 1;
 }
+
 .hero-headline {
   font-size: 6rem;
   font-weight: normal;
   white-space: nowrap;
 }
+
 .hero-text {
   width: 146%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
 }
+
 .btn-signup {
   outline: none;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-size: 1.3rem;
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
 }
+
 .hero-img {
   grid-column: span 8;
 }
+
 .hero-img img {
   width: 100%;
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 
-.hero-section > .btn-signup {
+.hero-section>.btn-signup {
   display: none;
 }
 
-/* 
-Unnecessary class : element appears nowhere
 .modal-btn {
   font-size: 145%;
   background: #fe142f;
@@ -193,12 +222,13 @@ Unnecessary class : element appears nowhere
   padding: 0.75rem 2.5rem;
   border-radius: 1rem;
   cursor: pointer;
-} */
+}
+
 .btn-submit,
 .btn-signup {
   background: #fe142f;
   display: block;
-  /* margin: 0 auto; */
+  margin: 50px auto;
   margin: 85 auto;
   border-radius: 7px;
   font-size: 1rem;
@@ -212,20 +242,21 @@ Unnecessary class : element appears nowhere
   background: #3876ac;
 }
 
-/*  Removal of unnecessary class footer */
-/* .footer {
+
+.footer {
   margin: 20px;
   padding: 10px;
   font-family: var(--font-slab);
-} */
+}
 
 footer {
-  
+
   /* Removal of paddings in order to match the mockup.
   padding-left: 2vw;
   padding-right: 2vw; */
   margin: 0 20px;
 }
+
 .copyrights {
   color: #fe142f;
   padding: 0;
@@ -242,37 +273,45 @@ footer {
     display: block;
     box-shadow: unset;
   }
+
   .hero-content {
     background: #fff;
     color: #000;
     padding: 20px;
   }
+
   .hero-content::after {
     content: unset;
   }
+
   .hero-content .btn-signup {
     display: none;
   }
+
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     white-space: normal;
   }
+
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
+    margin-top: 20px;
   }
+
   .hero-img img {
     border-radius: 10px;
     margin-top: 40px;
   }
-  .hero-section > .btn-signup {
+
+  .hero-section>.btn-signup {
     display: block;
     margin: 32px auto 10px;
     padding: 12px 35px;
   }
-  /* Leave it here or create a niew media query for this one element ? */
+
   .copyrights {
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
   }
 }
@@ -319,13 +358,37 @@ footer {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  top: 50px;
   color: #fff;
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  text-align: center;
+  /* height: 80vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-body p {
+  font-size: 2rem;
+}
+.modal-confirmation .modal-body{
+  height: 95vh;
+
+  margin: 0 auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.modal-confirmation form{
+  position: absolute;
+  bottom: 20px;
 }
 
 label {
@@ -335,11 +398,13 @@ label {
   display: inline-block;
   margin-bottom: 11px;
 }
+
 input {
   padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
 }
+
 .text-control {
   margin: 0;
   padding: 8px;
@@ -348,6 +413,7 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -360,12 +426,15 @@ input {
   opacity: 0;
   transition: 0.3s;
 }
+
 .formData[data-error-visible="true"]::after {
   opacity: 1;
 }
+
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
+
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -379,6 +448,7 @@ input[data-error]::after {
   font-size: 12px;
   font-weight: normal;
 }
+
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
   display: block;
@@ -393,6 +463,7 @@ input[data-error]::after {
   top: -1px;
   transition: 0.3s;
 }
+
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
   content: "";
@@ -409,21 +480,26 @@ input[data-error]::after {
   transition: 0.3s;
   opacity: 0;
 }
+
 .checkbox-input {
   display: none;
 }
-.checkbox-input:checked + .checkbox-label .checkbox-icon::after,
-.checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
+
+.checkbox-input:checked+.checkbox-label .checkbox-icon::after,
+.checkbox-input:checked+.checkbox2-label .checkbox-icon::after {
   opacity: 1;
 }
-.checkbox-input:checked + .checkbox2-label .checkbox-icon {
+
+.checkbox-input:checked+.checkbox2-label .checkbox-icon {
   background: #279e7a;
 }
+
 .checkbox2-label .checkbox-icon {
   border-radius: 4px;
   border: 0;
   background: #c4c4c4;
 }
+
 .checkbox2-label .checkbox-icon::after {
   width: 7px;
   height: 4px;
@@ -436,6 +512,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
+
 .close {
   position: absolute;
   right: 15px;
@@ -446,6 +523,7 @@ input[data-error]::after {
   cursor: pointer;
   transform: scale(0.7);
 }
+
 .close:before,
 .close:after {
   position: absolute;
@@ -455,9 +533,11 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
+
 .close:before {
   transform: rotate(45deg);
 }
+
 .close:after {
   transform: rotate(-45deg);
 }
@@ -473,6 +553,7 @@ input[data-error]::after {
 .custom-select select {
   display: none;
 }
+
 .select-selected {
   background-color: #fff;
 }
@@ -528,6 +609,7 @@ input[data-error]::after {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
 /* custom select end */
 .text-label {
   font-weight: normal;
@@ -539,8 +621,8 @@ input[data-error]::after {
     opacity: 0;
     transform: translateY(-150px);
   }
+
   to {
     opacity: 1;
   }
 }
-

@@ -33,15 +33,9 @@ function validate() {
   // if (...) { elem.setAttribute("data-error-visible, true); return false; }
   //ces attributs sont dans le css .formData l-223 et 226
 
-
   modalbg.style.display = "none";
   modalConfirm.style.display = "block";
 
-
-
-
-
-  return false; // empêche la validation
- 
+  return false; // blocks validation until return true; 
 }
 
