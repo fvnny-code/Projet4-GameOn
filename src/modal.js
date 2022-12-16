@@ -43,8 +43,19 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+
+// Close modal form 
+modalBtnClose.addEventListener("click", function() {         
+  modalbg.style.display = "none";
+});
+//Close modal confirmation
+// NE MARCHE PAS !!!! //
+
+
+
 function validate() {
-  //console.log("blourp");
+//  checks if all other conditions return true. If not, return false, that blocks validation until return true.
+
   // conditions sur les inputs
   // Si problème
   // if (...) { elem.setAttribute("data-error-visible, true); return false; }
@@ -54,11 +65,3 @@ function validate() {
   modalConfirm.style.display = "block";
   return false; // blocks validation until return true; 
 }
-
-// Close modal form 
-modalBtnClose.addEventListener("click", function() {         
-  modalbg.style.display = "none";
-});
-//Close modal confirmation
-// NE MARCHE PAS !!!! //
-
