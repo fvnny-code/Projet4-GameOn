@@ -17,8 +17,6 @@
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
-      <!-- Deletion of the following link, in order to abide by the mockup -->
-      <!-- <a href="#" class="active"><span>Accueil</span></a> -->
 
       <!-- Addition of the class="active" in order to abide by the mockup -->
       <a href="#" class="active"><span>Détails de l'évènement</span></a>
@@ -71,18 +69,18 @@
 
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required/><br>
+              <input class="text-control" type="email" id="email" name="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z0-9]{1,5}$" required/><br>
             </div>
             <div id="emailText"></div>
 
             <div class="formData">
-              <label>Date de naissance</label><br>
+              <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate"  required/><br>
             </div>
             <div id="birthdateText"></div>
 
             <div class="formData">
-              <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+              <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
             </div>
             <div id="quantityText"></div>
