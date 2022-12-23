@@ -98,13 +98,17 @@ modalBtnClose.addEventListener("click", function () {
 //Close modal confirmation
 // NE MARCHE PAS !!!! //
 
-
-
 function validate() {
-  if (isFormValid()) {
-    modalbg.style.display = "none";
-    modalConfirm.style.display = "block";
-  }
-
-  return false; // blocks validation until return true; 
+  modalbg.style.display = "none";
+  modalConfirm.style.display = "block";
+  return false;
 }
+
+// function validate() {
+//   if (isFormValid()) {
+//     modalbg.style.display = "none";
+//     modalConfirm.style.display = "block";
+//   }
+
+//   return false; // blocks validation until return true; 
+// }
