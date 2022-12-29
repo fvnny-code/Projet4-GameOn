@@ -43,6 +43,15 @@ const condition = document.getElementById("checkbox1");
 const btnSubmit = document.getElementById("btnSubmit");
 const btnValid = document.getElementById("btnValid");
 
+const firstText = document.getElementById("firstText");
+const lastText = document.getElementById("lastText");
+const emailText = document.getElementById("emailText");
+const birthdateText = document.getElementById("birthdateText");
+const quantityText = document.getElementById("quantityText");
+const locationText = document.getElementById("locationText");
+const conditionText = document.getElementById("conditionText");
+
+
 // Check if inputs are valid
 function isFirstnameValid() {
   // trim is a method that escapes any space before and after a string
@@ -58,14 +67,17 @@ function isEmailValid() {
 }
 function isBirthdateValid() {
   const isDateFormatValid = /[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(birthdate.value);
+  //console.log(isDateFormatValid);
   if (!isDateFormatValid) {
     return false;
   }
   const date = new Date(birthdate.value);
   const currentDate = new Date();
+  //console.log(date.getFullYear() <= currentDate.getFullYear())
+
   return date.getFullYear() <= currentDate.getFullYear()
-    && date.getMonth() <= currentDate.getMonth()
-    && date.getDate() <= currentDate.getMonth()
+    // && date.getMonth() <= currentDate.getMonth()
+    // && date.getDate() <= currentDate.getMonth()
 
 }
 function isQuantityValid() {
@@ -82,11 +94,12 @@ function isTournamentLocationValid() {
 }
 function isConditionValid() {
   if (!condition.checked) {
+    return false
     // afficher oui ou non le message d'erreur : document.getElementById(element en question).textContent= "Vous devez vérifier que vous acceptez les termes et conditions. "
-    document.getElementById("checkbox1").textContent = "Vous devez vérifier que vous acceptez les termes et conditions. ";
+    conditionText.textContent = "Vous devez vérifier que vous acceptez les termes et conditions. ";
 
   }
-  return false;
+ return true;
 }
 
 // function to verify if the form (all inputs) is valid or not
@@ -108,101 +121,73 @@ function isFormValid() {
 //   }
 // };
 // Error message by input
-document.getElementById("btnSubmit").addEventListener("click", function (filledForm) {
 
+function showErrormessage(element, message) {
+  element.textContent = message;
+}
+function clearErrormessages() {
+  firstText.textContent = "";
+  lastText.textContent = "";
+  emailText.textContent = "";
+  birthdateText.textContent = "";
+  quantityText.textContent = "";
+  locationText.textContent = "";
+  conditionText.textContent = "";
+
+}
+
+document.getElementById("form").addEventListener("submit", function (event) {
+  // console.log(isFirstnameValid());
+  event.preventDefault();
+  clearErrormessages();
+ 
   if (!isFirstnameValid()) {
 
-    showErrormessage(formInput, filledForm, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
-
-
-  }
-  if (!isLastnameValid) {
-
-    showErrormessage(formInput, filledForm, "Veuillez entrer 2 caractères ou plus pour le champ du nom.")
+    showErrormessage(firstText, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
 
   }
-  if (!isEmailValid) {
+  if (!isLastnameValid()) {
 
-    showErrormessage(formInput, filledForm, "Veuillez renseigner une adresse mail valide. Exemple : nom@contact.fr")
-
-  }
-  if (!isBirthdateValid) {
-
-    showErrormessage(formInput, filledForm, "Veuillez renseigner votre date de naissance.")
+    showErrormessage(lastText, "Veuillez entrer 2 caractères ou plus pour le champ du nom.")
 
   }
-  if (!isQuantityValid) {
+  if (!isEmailValid()) {
 
-    showErrormessage(formInput, filledForm, "Veuillez renseigner ce champ.")
-
-  }
-  if (!isTournamentLocationValid) {
-
-    showErrormessage(formInput, filledForm, "Veuillez renseigner ce champ.")
+    showErrormessage(emailText, "Veuillez renseigner une adresse mail valide. Exemple : nom@contact.fr")
 
   }
-  if (!isConditionValid) {
-
-    showErrormessage(formInput, filledForm, "Vous devez accepter les conditions générales d'utilisation")
+  if (!isBirthdateValid()) {
+    showErrormessage(birthdateText, "Veuillez renseigner votre date de naissance au bon format.")
 
   }
-  // if(!isFirstnameValid()){
-  //   isFirstnameValid.oninvalid = function(formInput){
-  //     showErrormessage(formInput, filledForm, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
-  //   };
-  //   return false;
-  // }
-  // if(!isLastnameValid){
-  //   isLastnameValid.oninvalid = function(formInput){
-  //     showErrormessage(formInput, filledForm, "Veuillez entrer 2 caractères ou plus pour le champ du nom.")
-  //   };
-  //   return false;
-  // }
-  // if(!isEmailValid){
-  //  isEmailValid.oninvalid = function(formInput){
-  //     showErrormessage(formInput, filledForm, "Veuillez renseigner une adresse mail valide. Exemple : nom@contact.fr")
-  //   };
-  //   return false;
-  // }
-  // if(!isBirthdateValid){
-  //   isBirthdateValid.oninvalid = function(formInput){
-  //     showErrormessage(formInput, filledForm, "Veuillez renseigner votre date de naissance.")
-  //   };
-  //   return false;
-  // }
-  // if(!isQuantityValid){
-  //   isQuantityValid.oninvalid = function(formInput){
-  //     showErrormessage(formInput, filledForm, "Veuillez renseigner ce champ.")
-  //   };
-  //   return false;
-  // }
-  // if(!isTournamentLocationValid){
-  //   isTournamentLocationValid.oninvalid = function(formInput){
-  //     showErrormessage(formInput, filledForm, "Veuillez renseigner ce champ.")
-  //   };
-  //   return false;
-  // }
-  // if(!isConditionValid){
-  //   isConditionValid.oninvalid = function(formInput){
-  //     showErrormessage(formInput, filledForm, "Vous devez accepter les conditions générales d'utilisation")
-  //   };
-  //   return false;
-  // }
+  if (!isQuantityValid()) {
+
+    showErrormessage(quantityText, "Veuillez renseigner ce champ.")
+
+  }
+  if (!isTournamentLocationValid()) {
+
+    showErrormessage(locationText, "Vous devez choisir une option.")
+
+  }
+  
+  if (!isConditionValid()) {
+
+    showErrormessage(conditionText, "Vous devez vérifier que vous acceptez les termes et conditions.")
+
+  }
+  if (isFormValid()) {
+    modalbg.style.display = "none";
+    modalConfirm.style.display = "block";
+    form.clear();
+  }
 
 });
 
-function validate() {
-  modalbg.style.display = "none";
-  modalConfirm.style.display = "block";
-  return false;
-}
+btnValid.addEventListener("click", function(){
+  modalConfirm.style.display = "none";
+})
 
 
-// function validate() {
-//   if (isFormValid()) {
-//     modalbg.style.display = "none";
-//     modalConfirm.style.display = "block";
-//   }
 
-//   return false; // blocks validation until return true; 
-// }
+

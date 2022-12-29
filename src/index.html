@@ -45,45 +45,48 @@
         </button>
       </div>
       <div class="hero-img">
-        <img src="./bg_img.jpg" alt="photo d'une personne jouant à un jeu vidéo, avec une manette de PlayStation à la main" />
+        <img src="./bg_img.jpg"
+          alt="photo d'une personne jouant à un jeu vidéo, avec une manette de PlayStation à la main" />
       </div>
       <button class="btn-signup modal-btn">
-          je m'inscris
-        </button>
+        je m'inscris
+      </button>
     </div>
     <!-- modal form -->
     <div class="bground modal-form">
       <div class="content">
         <span class="close" id="closeForm"></span>
         <div class="modal-body">
-          <form id="form" name="reserve" action="index.html" method="get" onsubmit="event.preventDefault(); validate();">
+          <form id="form" name="reserve" action="index.html" method="get">
             <div class="formData">
               <label for="first">Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
+              <input class="text-control" type="text" id="first" name="first" /><br>
             </div>
+            <div id="firstText" class="error"></div>
+
             <div class="formData">
               <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" minlength="2" /><br>
+              <input class="text-control" type="text" id="last" name="last" /><br>
             </div>
-            <div id="lastText"></div>
+            <div id="lastText" class="error"></div>
 
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z0-9]{1,5}$" required/><br>
+              <input class="text-control" id="email" name="email" required /><br>
             </div>
-            <div id="emailText"></div>
+            <div id="emailText" class="error"></div>
 
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
-              <input class="text-control" type="date" id="birthdate" name="birthdate"  required/><br>
+              <input class="text-control" type="date" id="birthdate" name="birthdate" required /><br>
             </div>
-            <div id="birthdateText"></div>
+            <div id="birthdateText" class="error"></div>
 
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
             </div>
-            <div id="quantityText"></div>
+            <div id="quantityText" class="error"></div>
 
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
 
@@ -117,16 +120,15 @@
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
-            <div id="locationText"></div>
+            <div id="locationText" class="error"></div>
 
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1"  required/>
-              <label class="checkbox2-label" for="checkbox1" >
+              <input class="checkbox-input" type="checkbox" id="checkbox1" />
+              <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label>
               <br>
-              <div id="conditionText"></div>
 
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">
@@ -135,6 +137,7 @@
               </label>
               <br>
             </div>
+            <div id="conditionText" class="error"></div>
 
             <input id="btnSubmit" class="button btn-submit" type="submit" value="C'est parti" />
           </form>
@@ -146,9 +149,9 @@
         <span class="close" id="closeConfirm"></span>
         <div class="modal-body">
           <p>Merci pour votre inscription</p>
-          <form>
-            <input id="btnValid" class="button btn-submit" type="submit" value="Fermer" />
-          </form>
+
+          <input id="btnValid" class="button btn-submit" type="button" value="Fermer" />
+
         </div>
       </div>
     </div>
