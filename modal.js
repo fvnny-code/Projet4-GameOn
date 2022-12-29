@@ -76,8 +76,8 @@ function isBirthdateValid() {
   //console.log(date.getFullYear() <= currentDate.getFullYear())
 
   return date.getFullYear() <= currentDate.getFullYear()
-    // && date.getMonth() <= currentDate.getMonth()
-    // && date.getDate() <= currentDate.getMonth()
+  // && date.getMonth() <= currentDate.getMonth()
+  // && date.getDate() <= currentDate.getMonth()
 
 }
 function isQuantityValid() {
@@ -99,7 +99,7 @@ function isConditionValid() {
     conditionText.textContent = "Vous devez vérifier que vous acceptez les termes et conditions. ";
 
   }
- return true;
+  return true;
 }
 
 // function to verify if the form (all inputs) is valid or not
@@ -140,7 +140,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   // console.log(isFirstnameValid());
   event.preventDefault();
   clearErrormessages();
- 
+
   if (!isFirstnameValid()) {
 
     showErrormessage(firstText, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
@@ -170,7 +170,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
     showErrormessage(locationText, "Vous devez choisir une option.")
 
   }
-  
+
   if (!isConditionValid()) {
 
     showErrormessage(conditionText, "Vous devez vérifier que vous acceptez les termes et conditions.")
@@ -184,9 +184,9 @@ document.getElementById("form").addEventListener("submit", function (event) {
 
 });
 
-btnValid.addEventListener("click", function(){
+btnValid.addEventListener("click", function () {
   modalConfirm.style.display = "none";
-  window.location.reload();
+  form.reset();
 })
 
 
