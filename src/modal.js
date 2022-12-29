@@ -91,18 +91,21 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
-// Close modal form 
-modalBtnClose.addEventListener("click", function () {
+// Close modal form with X button
+document.getElementById("closeForm").addEventListener("click", function(closeModal){
   modalbg.style.display = "none";
 });
-//Close modal confirmation
-// NE MARCHE PAS !!!! //
+// Close confirm form with X button
+document.getElementById("closeConfirm").addEventListener("click", function(closeConfirm){
+modalConfirm.style.display = "none";
+});
 
 function validate() {
   modalbg.style.display = "none";
   modalConfirm.style.display = "block";
   return false;
 }
+
 
 // function validate() {
 //   if (isFormValid()) {
