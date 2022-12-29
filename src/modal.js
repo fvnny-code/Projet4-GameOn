@@ -14,6 +14,23 @@ const modalBtnClose = document.querySelector(".close");
 const formData = document.querySelectorAll(".formData");
 const form = document.getElementById("form");
 const modalConfirm = document.querySelector(".modal-confirmation");
+// -------- Events for launching or closing modal form -------- //
+
+// launch modal event
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+// launch modal form
+function launchModal() {
+  modalbg.style.display = "block";
+}
+// Close modal form with X button
+document.getElementById("closeForm").addEventListener("click", function (closeModal) {
+  modalbg.style.display = "none";
+});
+// Close confirm form with X button
+document.getElementById("closeConfirm").addEventListener("click", function (closeConfirm) {
+  modalConfirm.style.display = "none";
+});
+
 
 // const to get form inputs
 const firstname = document.getElementById("first");
@@ -83,21 +100,95 @@ function isFormValid() {
     && isConditionValid()
 }
 
-// -------- Events for launching or closing modal form -------- //
+// function to show error messages when input is not valid
+// function showErrormessage(formInput, filledForm, message) {
+//   formInput.target.setValidity("");
+//   if(!formInput.target.validity.valid && formInput.target.value.length == 0){
+//     formInput.target.setValidity(message);
+//   }
+// };
+// Error message by input
+document.getElementById("btnSubmit").addEventListener("click", function (filledForm) {
 
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-// launch modal form
-function launchModal() {
-  modalbg.style.display = "block";
-}
-// Close modal form with X button
-document.getElementById("closeForm").addEventListener("click", function(closeModal){
-  modalbg.style.display = "none";
-});
-// Close confirm form with X button
-document.getElementById("closeConfirm").addEventListener("click", function(closeConfirm){
-modalConfirm.style.display = "none";
+  if (!isFirstnameValid()) {
+
+    showErrormessage(formInput, filledForm, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
+
+
+  }
+  if (!isLastnameValid) {
+
+    showErrormessage(formInput, filledForm, "Veuillez entrer 2 caractères ou plus pour le champ du nom.")
+
+  }
+  if (!isEmailValid) {
+
+    showErrormessage(formInput, filledForm, "Veuillez renseigner une adresse mail valide. Exemple : nom@contact.fr")
+
+  }
+  if (!isBirthdateValid) {
+
+    showErrormessage(formInput, filledForm, "Veuillez renseigner votre date de naissance.")
+
+  }
+  if (!isQuantityValid) {
+
+    showErrormessage(formInput, filledForm, "Veuillez renseigner ce champ.")
+
+  }
+  if (!isTournamentLocationValid) {
+
+    showErrormessage(formInput, filledForm, "Veuillez renseigner ce champ.")
+
+  }
+  if (!isConditionValid) {
+
+    showErrormessage(formInput, filledForm, "Vous devez accepter les conditions générales d'utilisation")
+
+  }
+  // if(!isFirstnameValid()){
+  //   isFirstnameValid.oninvalid = function(formInput){
+  //     showErrormessage(formInput, filledForm, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
+  //   };
+  //   return false;
+  // }
+  // if(!isLastnameValid){
+  //   isLastnameValid.oninvalid = function(formInput){
+  //     showErrormessage(formInput, filledForm, "Veuillez entrer 2 caractères ou plus pour le champ du nom.")
+  //   };
+  //   return false;
+  // }
+  // if(!isEmailValid){
+  //  isEmailValid.oninvalid = function(formInput){
+  //     showErrormessage(formInput, filledForm, "Veuillez renseigner une adresse mail valide. Exemple : nom@contact.fr")
+  //   };
+  //   return false;
+  // }
+  // if(!isBirthdateValid){
+  //   isBirthdateValid.oninvalid = function(formInput){
+  //     showErrormessage(formInput, filledForm, "Veuillez renseigner votre date de naissance.")
+  //   };
+  //   return false;
+  // }
+  // if(!isQuantityValid){
+  //   isQuantityValid.oninvalid = function(formInput){
+  //     showErrormessage(formInput, filledForm, "Veuillez renseigner ce champ.")
+  //   };
+  //   return false;
+  // }
+  // if(!isTournamentLocationValid){
+  //   isTournamentLocationValid.oninvalid = function(formInput){
+  //     showErrormessage(formInput, filledForm, "Veuillez renseigner ce champ.")
+  //   };
+  //   return false;
+  // }
+  // if(!isConditionValid){
+  //   isConditionValid.oninvalid = function(formInput){
+  //     showErrormessage(formInput, filledForm, "Vous devez accepter les conditions générales d'utilisation")
+  //   };
+  //   return false;
+  // }
+
 });
 
 function validate() {
