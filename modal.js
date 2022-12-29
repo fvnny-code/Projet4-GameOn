@@ -179,13 +179,14 @@ document.getElementById("form").addEventListener("submit", function (event) {
   if (isFormValid()) {
     modalbg.style.display = "none";
     modalConfirm.style.display = "block";
-    form.clear();
+  
   }
 
 });
 
 btnValid.addEventListener("click", function(){
   modalConfirm.style.display = "none";
+  window.location.reload();
 })
 
 
