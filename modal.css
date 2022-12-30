@@ -416,13 +416,13 @@ input {
 
 .error {
  
-  font-size: 0.4em;
+  font-size: 0.6em;
   color: #e54858;
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
   text-align: left;
-  line-height: 0.3;
+  line-height: 1;
   opacity: 1;
   transition: 0.3s;
  
