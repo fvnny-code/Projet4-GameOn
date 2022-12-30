@@ -251,9 +251,6 @@ main {
 
 footer {
 
-  /* Removal of paddings in order to match the mockup.
-  padding-left: 2vw;
-  padding-right: 2vw; */
   margin: 0 20px;
 }
 
@@ -370,7 +367,6 @@ footer {
   padding: 15px 8%;
   margin: 15px auto;
   text-align: center;
-  /* height: 80vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

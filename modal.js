@@ -14,6 +14,7 @@ const modalBtnClose = document.querySelector(".close");
 const formData = document.querySelectorAll(".formData");
 const form = document.getElementById("form");
 const modalConfirm = document.querySelector(".modal-confirmation");
+
 // -------- Events for launching or closing modal form -------- //
 
 // launch modal event
@@ -67,22 +68,18 @@ function isEmailValid() {
 }
 function isBirthdateValid() {
   const isDateFormatValid = /[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(birthdate.value);
-  //console.log(isDateFormatValid);
   if (!isDateFormatValid) {
     return false;
   }
   const date = new Date(birthdate.value);
   const currentDate = new Date();
-  //console.log(date.getFullYear() <= currentDate.getFullYear())
-
   return date.getFullYear() <= currentDate.getFullYear()
-  // && date.getMonth() <= currentDate.getMonth()
-  // && date.getDate() <= currentDate.getMonth()
-
 }
+
 function isQuantityValid() {
   return parseInt(quantity.value) >= 0;
 }
+
 function isTournamentLocationValid() {
   for (let i = 0; tournamentLocation.length > i; i++) {
     if (tournamentLocation[i].checked) {
@@ -90,14 +87,12 @@ function isTournamentLocationValid() {
     }
   }
   return false;
-
 }
+
 function isConditionValid() {
   if (!condition.checked) {
     return false
-    // afficher oui ou non le message d'erreur : document.getElementById(element en question).textContent= "Vous devez vérifier que vous acceptez les termes et conditions. "
     conditionText.textContent = "Vous devez vérifier que vous acceptez les termes et conditions. ";
-
   }
   return true;
 }
@@ -113,18 +108,10 @@ function isFormValid() {
     && isConditionValid()
 }
 
-// function to show error messages when input is not valid
-// function showErrormessage(formInput, filledForm, message) {
-//   formInput.target.setValidity("");
-//   if(!formInput.target.validity.valid && formInput.target.value.length == 0){
-//     formInput.target.setValidity(message);
-//   }
-// };
-// Error message by input
-
 function showErrormessage(element, message) {
   element.textContent = message;
 }
+
 function clearErrormessages() {
   firstText.textContent = "";
   lastText.textContent = "";
@@ -133,57 +120,40 @@ function clearErrormessages() {
   quantityText.textContent = "";
   locationText.textContent = "";
   conditionText.textContent = "";
-
 }
-
+// Event delegation to attach the event handler to the parent element (form), instead of its children (inputs): usefull when you have lots of children element :)
 document.getElementById("form").addEventListener("submit", function (event) {
-  // console.log(isFirstnameValid());
   event.preventDefault();
   clearErrormessages();
 
   if (!isFirstnameValid()) {
-
     showErrormessage(firstText, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
-
   }
   if (!isLastnameValid()) {
-
     showErrormessage(lastText, "Veuillez entrer 2 caractères ou plus pour le champ du nom.")
-
   }
   if (!isEmailValid()) {
-
     showErrormessage(emailText, "Veuillez renseigner une adresse mail valide. Exemple : nom@contact.fr")
-
   }
   if (!isBirthdateValid()) {
     showErrormessage(birthdateText, "Veuillez renseigner votre date de naissance au bon format.")
-
   }
   if (!isQuantityValid()) {
-
     showErrormessage(quantityText, "Veuillez renseigner ce champ.")
-
   }
   if (!isTournamentLocationValid()) {
-
     showErrormessage(locationText, "Vous devez choisir une option.")
-
   }
-
   if (!isConditionValid()) {
-
     showErrormessage(conditionText, "Vous devez vérifier que vous acceptez les termes et conditions.")
-
   }
   if (isFormValid()) {
     modalbg.style.display = "none";
     modalConfirm.style.display = "block";
-  
   }
-
 });
 
+// Form reset here, to clear infos when validate confirmation only : when closing the modals with X button, the data remain in the form.
 btnValid.addEventListener("click", function () {
   modalConfirm.style.display = "none";
   form.reset();
