@@ -3,7 +3,7 @@
  Pour ce projet, il n'y a aucune dépendance ;
  Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
 
-## cahier des charges : 
+## Cahier des charges : 
 
 ### Lien vers la maquette Figma du projet :
 https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630&t=XORPgnCnPGgEPaM6-0
