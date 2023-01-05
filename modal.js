@@ -12,6 +12,7 @@ const modalbg = document.querySelector(".modal-form");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalBtnClose = document.querySelector(".close");
 const formData = document.querySelectorAll(".formData");
+
 const form = document.getElementById("form");
 const modalConfirm = document.querySelector(".modal-confirmation");
 
@@ -23,6 +24,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
+
 // Close modal form with X button
 document.getElementById("closeForm").addEventListener("click", function (closeModal) {
   modalbg.style.display = "none";
